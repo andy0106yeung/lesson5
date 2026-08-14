@@ -9,10 +9,10 @@ on:
 jobs:
   test_variables: 
     env:
-      JOB_VAR: 'JOB level variable"
-  name: job to test variables
-  runs-on: ubuntu-latest
-  steps:
+      JOB_VAR: "JOB level variable"
+    name: job to test variables
+    runs-on: ubuntu-latest
+    steps:
     - name: test variables
       id: stepVar
       env: 
@@ -23,5 +23,5 @@ jobs:
         echo $WF_VAR
         echo $JOB_VAR
         echo $STEP_VAR
-        echo ${{ var.CONF_VAR }}
+        echo ${{ vars.CONF_VAR }}
         echo ${{ secrets.CONF_VAR }}
