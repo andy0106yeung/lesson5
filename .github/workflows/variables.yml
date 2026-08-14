@@ -34,12 +34,12 @@ jobs:
         run: |
             echo "this step runs a special script to clean up after a failed step"
             echo ${{ env.FORMA_VAR }}
-        - name: function and always status check
-          if: ${{ startsWith(env.aString, 'this') && always () }}
-          run: sleep 60
-        - name: test cancel status check
-          if: ${{ cancelled() }}  
-          run: echo "this job if a workflow cancelled, it can also used for cleanup scripts"
+      - name: function and always status check
+        if: ${{ startsWith(env.aString, 'this') && always () }}
+        run: sleep 60
+      - name: test cancel status check
+        if: ${{ cancelled() }}  
+        run: echo "this job if a workflow cancelled, it can also used for cleanup scripts"
           
           
   test_variables: 
